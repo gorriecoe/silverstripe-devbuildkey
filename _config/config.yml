@@ -1,0 +1,15 @@
+---
+Name: devbuildkey
+Only:
+  moduleexists: 'silverstripe/admin'
+---
+SilverStripe\Admin\LeftAndMain:
+  extensions:
+    - gorriecoe\DevBuildKey\ControllerDevBuildKey
+---
+Only:
+  moduleexists: 'silverstripe/cms'
+---
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - gorriecoe\DevBuildKey\SiteTreeDevBuildKey
