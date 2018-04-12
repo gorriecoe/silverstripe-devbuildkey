@@ -1,6 +1,6 @@
 {
   "name": "gorriecoe/silverstripe-devbuildkey",
-  "description": "Enables the use of the key press (ctrl+d or alt+d) to run dev build.",
+  "description": "Enables the use of the key press ctrl+d or alt+d to run dev build.",
   "type": "silverstripe-vendormodule",
   "license": "BSD-3-Clause",
   "authors": [

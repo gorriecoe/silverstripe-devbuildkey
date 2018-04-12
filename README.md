@@ -1,5 +1,5 @@
 # Silverstripe dev build key
-Enables the use of the key press (ctrl+d or alt+d) to run dev build.
+Enables the use of the key press `ctrl+d` or `alt+d` to run dev build.
 
 ## Installation
 Composer is the recommended way of installing SilverStripe modules.
