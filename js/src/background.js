@@ -105,18 +105,22 @@ function devbuildkeyup(e) {
         let xhttp = new XMLHttpRequest()
         xhttp.onreadystatechange = function() {
             building = false
-            if (this.readyState == 4 && this.status == 200) {
-                let container = document.implementation.createHTMLDocument().documentElement
-                container.innerHTML = this.responseText
-                if (container.querySelectorAll('.error').length > 0) {
-                    setDevIndicatorState('error')
-                    devIndicator.onClick = function() {
-                        document.body.innerHTML = this.responseText
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    let container = document.implementation.createHTMLDocument().documentElement
+                    container.innerHTML = this.responseText
+                    if (container.querySelectorAll('.error').length > 0) {
+                        setDevIndicatorState('error')
+                        openInNewTab(this.responseText)
+                    } else {
+                        setDevIndicatorState('success', true)
                     }
                 } else {
-                    setDevIndicatorState('success', true)
+                    setDevIndicatorState('error')
+                    openInNewTab(this.responseText)
                 }
             }
+
         }
         xhttp.timeout = 60000
         xhttp.ontimeout = function() {
@@ -141,6 +145,11 @@ function setDevIndicatorState(state, reset = false) {
             classList.remove('error')
         }, 4000);
     }
+}
+
+function openInNewTab(html) {
+    let newTab = window.open()
+    newTab.document.body.innerHTML = html
 }
 
 if (document.addEventListener) {

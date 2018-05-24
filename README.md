@@ -14,3 +14,15 @@ composer require gorriecoe/silverstripe-devbuildkey
 ## Maintainers
 
 - [Gorrie Coe](https://github.com/gorriecoe)
+
+## Configuration
+Dev build key provides 2 options for processing dev build.
+
+1. Run in new tab (default)
+2. Run in background.  This option runs via ajax and only opens a new tab if it fails.
+
+To run in background apply the following yaml settings.
+```
+gorriecoe\DevBuildKey\DevBuildKey:
+  run_in_background: true
+```
