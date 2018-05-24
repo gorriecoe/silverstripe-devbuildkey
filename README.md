@@ -19,7 +19,7 @@ composer require gorriecoe/silverstripe-devbuildkey
 Dev build key provides 2 options for processing dev build.
 
 1. Run in new tab (default)
-2. Run in background.  This option runs via ajax and only opens a new tab if it fails.
+2. Run in background via ajax and only open a new tab if dev build fails.
 
 To run in background apply the following yaml settings.
 ```
